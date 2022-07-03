@@ -1,0 +1,21 @@
+<div class="course-card">
+  <!-- <img [src]="cardData.img" alt=""> -->
+  <div class="card-image" [ngStyle]="{'background-image': 'url(\''+ cardData.img+ '\')'}">
+<div class="members">
+  <img src="../../assets/images/user.svg" alt=""> <span class="number">{{cardData.members}}</span>
+</div>
+  </div>
+  <div class="card-content">
+    <div class="date" >{{cardData.date}}</div>
+    <div class="title" [title]="cardData.title">{{cardData.title}}</div>
+    <div class="description">{{cardData.desc}}</div>
+    <div class="price-btnn">
+      <div class="price">
+        <span class="after">{{cardData.priceAfter}}</span>
+        <span class="before">{{cardData.priceBrfore}}<div class="line"></div></span>
+
+      </div>
+      <button class="show-all">Show All</button>
+    </div>
+  </div>
+</div>

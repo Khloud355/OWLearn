@@ -1,0 +1,31 @@
+<div class="about-us">
+  <div class="about-image">
+    <img class="about" [src]="data.img" alt="" />
+    <div class="text" *ngIf="AboutSectionFlag">
+      <span class="title">Educational technology</span>
+      <p class="location">
+        <img class="loc-icon" src="../../assets/images/map-pin.svg" alt="" />
+        <span> Jakarta, Indonesia</span>
+      </p>
+    </div>
+  </div>
+  <div class="about-content">
+    <h4>{{ data.title }}</h4>
+    <div class="description" *ngIf="AboutSectionFlag">
+      {{ data.desc }}
+    </div>
+    <div class="description2" *ngIf="!AboutSectionFlag">
+      {{ data.desc }}
+    </div>
+    <button class="about-bttn" *ngIf="AboutSectionFlag">Become a Member</button>
+    <div class="postion" *ngIf="!AboutSectionFlag">
+      <div class="text">
+        <span class="main">Briana Patton</span>
+        <span>Designer at Salesforce</span>
+      </div>
+      <div class="icon">
+        <img src="../../assets/images/arrow-right-circle.svg" alt="" />
+      </div>
+    </div>
+  </div>
+</div>

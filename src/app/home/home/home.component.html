@@ -1,0 +1,186 @@
+<div class="home-content">
+  <div class="container">
+    <div class="contnet">
+      <div class="popup" *ngIf="showContact">
+        <div class="popu-header">
+        <h4>Contact us</h4>
+     <button class="close" (click)="closePopUp()">X</button>
+      </div>
+        <input class="form-control" placeholder="Enter Your Name" type="text">
+        <input class="form-control" placeholder="Enter Your Valid Email" type="text">
+        <textarea  class="form-control"  name="" id="" cols="2" rows="4"></textarea>
+        <button class="submit">Submit</button>
+        <div class="data">
+          <!-- <p>You Can Contact with our company with</p> -->
+          <span
+            >
+            <a href="">support@edtech.com</a>
+          </span>
+          <span style="margin: 1rem 0;"> <a style=" text-decoration: none;" href="">(+62) 85923935983</a></span>
+          <ul>
+            <li>
+              <a href="" class="social-icon">
+                <img src="../../assets/images/instgram.svg" alt="" />
+              </a>
+              <a href="" class="social-icon">
+                <img src="../../assets/images/twiter.svg" alt="" />
+              </a>
+              <a href="" class="social-icon">
+                <img src="../../assets/images/linkedin.svg" alt="" />
+              </a>
+              <a href="" class="social-icon">
+                <img src="../../assets/images/youtube.svg" alt="" />
+              </a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+      <div class="text">
+        <h2>Learn Any Skills to advance Your career path</h2>
+        <img class="line" src="../../../assets/images/Vector 1.svg" alt="" />
+        <div class="discription">
+          Want to improve your work skills? You need to study harder with the
+          help of a great mentor to improve your performance at work
+        </div>
+        <div class="button-rating">
+          <button class="explore">Explore Path</button>
+          <div class="rating">
+            <div class="images">
+              <div class="image img1">
+              <img
+                class="person1"
+                src="../../../assets/images/Ellipse 67.svg"
+                alt=""
+              />
+            </div>
+            <div class="image img2">
+              <img
+                class="person2"
+                src="../../../assets/images/Ellipse 68.svg"
+                alt=""
+              />
+            </div>
+            <div class="image img3">
+              <img
+                class="person3"
+                src="../../../assets/images/Ellipse 69.svg"
+                alt=""
+              />
+            </div>
+            </div>
+            <div class="rating-content">
+              <div class="rate-images">
+                <img src="../../../assets/images/Vector.svg" alt="" />
+                <img src="../../../assets/images/Vector.svg" alt="" />
+                <img src="../../../assets/images/Vector.svg" alt="" />
+                <img src="../../../assets/images/Vector.svg" alt="" />
+                <img src="../../../assets/images/star.svg" alt="" />
+              </div>
+              <div class="rate-content">
+                (4,5/5 dari 10k Alumni)
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="image">
+        <img src="../../../assets/images/man.svg" alt="" />
+      </div>
+    </div>
+    <div class="other-companies">
+      <div class="left-side">
+        We partner with More Than 10+ Companies
+      </div>
+      <div class="right-side">
+        <img class="logo" src="../../../assets/images/Logo.svg" alt="" />
+      </div>
+    </div>
+    <app-about-us [data]="aboutUs" [AboutSectionFlag]="true"></app-about-us>
+
+    <div class="course-bootcamp">
+      <div class="course-title">
+        <div class="title">Discover Course & Bootcamp</div>
+        <button class="show-all" (click)="showAllCourses()">Show All</button>
+      </div>
+      <div class="tabs-section">
+        <div class="caroseul-content">
+          <button
+            id="all"
+            class="all"
+            [ngClass]="{ active: allObj.active === true }"
+            (click)="addAllActive()"
+          >
+            {{ "All Courses" }}
+          </button>
+          <p-carousel
+            [value]="categories"
+            [numVisible]="5"
+            [numScroll]="1"
+            [showIndicators]="false"
+            contentClass="carousel-content"
+            styleClass="carousel"
+            [showNavigators]="categories.length > 2"
+            (onPage)="onNavigateCarousel($event)"
+          >
+            <ng-template let-attribute pTemplate="item">
+              <button
+                class="carsouel-title"
+                (click)="addActive(attribute)"
+                [ngClass]="{ active: attribute.active === true }"
+              >
+                {{ attribute.title }}
+              </button>
+            </ng-template>
+          </p-carousel>
+        </div>
+      </div>
+      <div class="courses">
+        <div *ngFor="let data of courseCardData">
+          <div (click)="courseDetails()">
+            <app-course-card [cardData]="data" *ngIf="data"></app-course-card>
+          </div>
+        </div>
+        <div class="matched" *ngIf="courseCardData.length == 0">
+          No Data Matched
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="cta">
+    <div class="container">
+      <div class="cta-content">
+        <p>
+          Still confused about your career choice? consult with our experts
+        </p>
+        <button class="contact">Contact Us</button>
+      </div>
+      <div class="cta-image">
+        <img src="../../../assets/images/girl.svg" alt="" />
+      </div>
+    </div>
+  </div>
+  <div class="worked-in">
+    <div class="container">
+      <p>Our graduates have worked in</p>
+      <div class="work-content">
+        <div class="logo" *ngFor="let img of imgUrls">
+          <img [src]="img.img" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="says">
+    <div class="container">
+      <app-about-us [data]="says" [AboutSectionFlag]="false"></app-about-us>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="container">
+      <app-footer></app-footer>
+    </div>
+    <div class="copyright">
+      Copyright © 2021 Owlearn. All Rights Reserved.
+    </div>
+  </div>
+</div>

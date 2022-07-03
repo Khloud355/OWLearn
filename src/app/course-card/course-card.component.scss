@@ -1,0 +1,94 @@
+.course-card {
+  cursor: pointer;
+  width: 20.2rem;
+  box-shadow: rgb(149 157 165 / 20%) 0px 0px 8px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  height: 27.5rem;
+  .card-image {
+    // width: 20rem;
+    height: 12rem;
+    position: relative;
+    // border:1px solid red;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    .members {
+      img {
+        margin-inline-end: 3px;
+        height: 14px;
+      }
+      display: flex;
+      align-items: center;
+      background-color: #fff;
+      color: #dc4298;
+      font-weight: 600;
+      padding: 0.2rem 0.8rem;
+      border-radius: 20px;
+      position: absolute;
+      bottom: 12%;
+      left: 5%;
+      font-size: 12px;
+    }
+  }
+  .card-content {
+    padding: 1rem 1rem 1.5rem 1rem;
+    .date {
+      font-size: 13px;
+      color: #777795;
+      margin-bottom: 0.5rem;
+    }
+    .title {
+      font-size: 22px;
+      font-weight: 700;
+      width: 17rem;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      // white-space: nowrap;
+      overflow: hidden;
+    }
+    .description {
+      color: #777795;
+      font-size: 14px;
+      margin: 0.5rem 0 1rem 0;
+      width: 16rem;
+    }
+    .price-btnn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .price {
+        .after {
+          color: #dc4298;
+          margin-inline-end: 0.5rem;
+          font-weight: 700;
+        }
+        .before {
+          color: #777795;
+          position: relative;
+          .line {
+            width: 2.66rem;
+            background: #777795;
+            height: 1px;
+            position: absolute;
+            top: 12px;
+            left: 0px;
+          }
+        }
+      }
+      .show-all {
+        background: transparent;
+        color: #dc4298;
+        border: 1px solid;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 0.5rem 2rem;
+        border-radius: 8px;
+      }
+    }
+  }
+}
